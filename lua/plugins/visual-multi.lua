@@ -12,5 +12,8 @@ return {
     -- -- vim.g.VM_maps['Find Subword Under'] = '<C-m>'
     -- vim.g.VM_maps['Select Cursor Down'] = '<M-C-Down>'
     -- vim.g.VM_maps['Select Cursor Up'] = '<M-C-Up>'
+
+    -- vim.g.VM_default_mappings = 0
+    -- vim.g.VM_maps['Find Under'] = 'C-m'
   end,
 }

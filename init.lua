@@ -21,17 +21,16 @@ require('lazy').setup({
   require 'plugins.conform',
   require 'plugins.tokyonight',
   require 'plugins.treesitter',
+  require 'plugins.mini',
+  require 'plugins.whichkey',
   -- require 'plugins.dap',
   -- require 'plugins.lint',
-  { 'folke/which-key.nvim' }, -- Useful plugin to show you pending keybinds.
   { 'tpope/vim-sleuth' }, -- Detect tabstop and shiftwidth automatically
   { 'numToStr/Comment.nvim', opts = {} },
   { 'github/copilot.vim' },
-  { 'APZelos/blamer.nvim' },
   -- Highlight todo, notes, etc in comments
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
   -- Collection of various small independent plugins/modules
-  { 'echasnovski/mini.nvim' },
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
