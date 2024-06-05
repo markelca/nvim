@@ -6,41 +6,12 @@ require 'custom.autocmd'
 require 'custom.lazy'
 
 require('lazy').setup({
-  {
-    'mg979/vim-visual-multi',
-    config = function()
-      vim.g.VM_default_mappings = 0
-      -- let g:VM_maps = {}
-      -- let g:VM_maps['Find Under']         = '<C-d>'           " replace C-n
-      -- let g:VM_maps['Find Subword Under'] = '<C-d>'           " replace visual C-n
-      -- let g:VM_maps["Select Cursor Down"] = '<M-C-Down>'      " start selecting down
-      -- let g:VM_maps["Select Cursor Up"]   = '<M-C-Up>'
-      -- vim.g.VM_maps = {}
-      vim.g.VM_maps['Find Under'] = '<C-m>'
-      -- -- vim.g.VM_maps['Find Subword Under'] = '<C-m>'
-      -- vim.g.VM_maps['Select Cursor Down'] = '<M-C-Down>'
-      -- vim.g.VM_maps['Select Cursor Up'] = '<M-C-Up>'
-    end,
-  },
-
-  { 'tpope/vim-fugitive' },
-  { 'easymotion/vim-easymotion' },
-  { 'mbbill/undotree' },
-  {
-    'ThePrimeagen/harpoon',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-    },
-  },
-  {
-    'nvim-neo-tree/neo-tree.nvim',
-    version = '*',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
-      'MunifTanjim/nui.nvim',
-    },
-  },
+  require 'plugins.visual-multi',
+  require 'plugins.fugitive',
+  require 'plugins.easymotion',
+  require 'plugins.undotree',
+  require 'plugins.harpoon',
+  require 'plugins.neotree',
   { 'folke/which-key.nvim' }, -- Useful plugin to show you pending keybinds.
   { 'tpope/vim-sleuth' }, -- Detect tabstop and shiftwidth automatically
   { 'numToStr/Comment.nvim', opts = {} },
@@ -49,23 +20,7 @@ require('lazy').setup({
     'lewis6991/gitsigns.nvim',
     opts = {},
   },
-  { -- Fuzzy Finder (files, lsp, etc)
-    'nvim-telescope/telescope.nvim',
-    event = 'VimEnter',
-    branch = '0.1.x',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      { -- If encountering errors, see telescope-fzf-native README for installation instructions
-        'nvim-telescope/telescope-fzf-native.nvim',
-        build = 'make',
-        cond = function()
-          return vim.fn.executable 'make' == 1
-        end,
-      },
-      { 'nvim-telescope/telescope-ui-select.nvim' },
-      { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
-    },
-  },
+  require 'plugins.telescope',
   { -- Autocompletion
     'hrsh7th/nvim-cmp',
     event = 'InsertEnter',
