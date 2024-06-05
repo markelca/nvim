@@ -1,9 +1,9 @@
-require 'custom.globals'
-require 'custom.keymap'
-require 'custom.dvorak'
-require 'custom.opt'
-require 'custom.autocmd'
-require 'custom.lazy'
+require 'config.globals'
+require 'config.keymap'
+require 'config.dvorak'
+require 'config.opt'
+require 'config.autocmd'
+require 'config.lazy'
 
 require('lazy').setup({
   require 'plugins.visual-multi',
