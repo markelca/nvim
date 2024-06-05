@@ -12,15 +12,15 @@ require('lazy').setup({
   require 'plugins.undotree',
   require 'plugins.harpoon',
   require 'plugins.neotree',
+  require 'plugins.telescope',
+  require 'plugins.gitsigns', -- adds gitsigns recommend keymaps
+  require 'plugins.indent_line',
+  require 'plugins.autopairs',
+
   { 'folke/which-key.nvim' }, -- Useful plugin to show you pending keybinds.
   { 'tpope/vim-sleuth' }, -- Detect tabstop and shiftwidth automatically
   { 'numToStr/Comment.nvim', opts = {} },
   { 'github/copilot.vim' },
-  { -- Adds git related signs to the gutter, as well as utilities for managing changes
-    'lewis6991/gitsigns.nvim',
-    opts = {},
-  },
-  require 'plugins.telescope',
   { -- Autocompletion
     'hrsh7th/nvim-cmp',
     event = 'InsertEnter',
@@ -180,10 +180,7 @@ require('lazy').setup({
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
   -- require 'kickstart.plugins.debug',
-  require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
-  require 'kickstart.plugins.autopairs',
-  require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
