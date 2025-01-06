@@ -23,6 +23,7 @@ require('lazy').setup({
   require 'plugins.treesitter',
   require 'plugins.mini',
   require 'plugins.whichkey',
+  -- require 'plugins.image',
   -- require 'plugins.dap',
   -- require 'plugins.lint',
   { 'tpope/vim-sleuth' }, -- Detect tabstop and shiftwidth automatically

@@ -28,6 +28,8 @@ vim.keymap.set('n', '<C-S-h>', '<C-w><C-h>', { desc = 'Move focus to the left wi
 vim.keymap.set('n', '<C-S-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+vim.keymap.set('n', '<C-g>', 'gT', { desc = 'Previous tab' })
+vim.keymap.set('n', '<C-c>', 'gt', { desc = 'Next tab' })
 -- Toggle line numbers
 vim.keymap.set('n', '<leader>tl', function()
   vim.opt.number = not vim.opt.number:get()
