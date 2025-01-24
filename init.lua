@@ -27,6 +27,7 @@ require('lazy').setup({
   -- require 'plugins.dap',
   -- require 'plugins.lint',
   require 'plugins.ufo',
+  require 'plugins.context',
   { 'tpope/vim-sleuth' }, -- Detect tabstop and shiftwidth automatically
   { 'numToStr/Comment.nvim', opts = {} },
   { 'github/copilot.vim' },
