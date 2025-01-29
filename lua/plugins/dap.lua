@@ -38,11 +38,22 @@ return {
       {
         type = 'php',
         request = 'launch',
-        name = 'Listen for Xdebug',
+        name = 'Listen for Xdebug (Tetris)',
         port = 9003,
+        pathMappings = {
+          ['/app'] = '/home/markel/projects/tetris-project/',
+        },
+      },
+      {
+        type = 'php',
+        request = 'launch',
+        name = 'Listen for Xdebug (Wave)',
+        port = 9003,
+        pathMappings = {
+          ['/app'] = '/home/markel/projects/backend-api/',
+        },
       },
     }
-
     require('mason-nvim-dap').setup {
       -- Makes a best effort to setup the various debuggers with
       -- reasonable debug configurations
