@@ -23,6 +23,7 @@ require('lazy').setup({
   require 'plugins.treesitter',
   require 'plugins.mini',
   require 'plugins.whichkey',
+  require 'plugins.oil',
   -- require 'plugins.image',
   require 'plugins.dap',
   -- require 'plugins.lint',
