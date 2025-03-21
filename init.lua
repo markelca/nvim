@@ -25,18 +25,16 @@ require('lazy').setup({
   require 'plugins.whichkey',
   require 'plugins.oil',
   require 'plugins.auto-session',
-  -- require 'plugins.image',
+  require 'plugins.todo-comments',
   require 'plugins.dap',
-  -- require 'plugins.lint',
   require 'plugins.ufo',
   require 'plugins.context',
   require 'plugins.clapi',
+  -- require 'plugins.image',
+  -- require 'plugins.lint',
   { 'tpope/vim-sleuth' }, -- Detect tabstop and shiftwidth automatically
   { 'numToStr/Comment.nvim', opts = {} },
   { 'github/copilot.vim' },
-  -- Highlight todo, notes, etc in comments
-  { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
-  -- Collection of various small independent plugins/modules
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the

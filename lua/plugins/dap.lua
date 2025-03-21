@@ -81,6 +81,11 @@ return {
       dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ')
     end, { desc = 'Debug: Set Breakpoint' })
 
+    vim.keymap.set('n', '<leader>?', function()
+      require('dapui').eval(nil, { enter = true })
+    end)
+    vim.keymap.set('n', '<space>gb', dap.run_to_cursor)
+
     -- Dap UI setup
     -- For more information, see |:help nvim-dap-ui|
     dapui.setup {
