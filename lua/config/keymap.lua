@@ -1,5 +1,6 @@
 vim.keymap.set('n', '<leader>w', vim.cmd.w, { desc = '[W]rite file' })
 vim.keymap.set('n', '<leader>q', vim.cmd.q, { desc = '[Q]uit file' })
+vim.keymap.set('n', '<leader>Q', vim.cmd.qa, { desc = '[Q]uit all files' })
 vim.keymap.set('n', '<C-q>', vim.cmd.q, { desc = '[Q]uit file' })
 
 -- Center cursor

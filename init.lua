@@ -24,6 +24,7 @@ require('lazy').setup({
   require 'plugins.mini',
   require 'plugins.whichkey',
   require 'plugins.oil',
+  require 'plugins.auto-session',
   -- require 'plugins.image',
   require 'plugins.dap',
   -- require 'plugins.lint',
