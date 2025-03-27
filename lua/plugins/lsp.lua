@@ -122,6 +122,9 @@ return { -- LSP Configuration & Plugins
         -- capabilities = {},
         settings = {
           Lua = {
+            diagnostics = {
+              globals = { 'describe', 'it', 'before_each', 'after_each', 'vim' },
+            },
             completion = {
               callSnippet = 'Replace',
             },

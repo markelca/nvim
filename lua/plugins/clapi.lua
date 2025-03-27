@@ -8,6 +8,7 @@ return {
     'nvim-treesitter/nvim-treesitter',
   },
   config = function()
+    -- vim.cmd [[set runtimepath+=~/.local/share/nvim/lazy/clapi.nvim]]
     -- Enable the clapi extension adding the following line to your telescope configuration:
     pcall(require('telescope').load_extension 'clapi')
 
