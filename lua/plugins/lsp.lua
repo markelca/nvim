@@ -105,6 +105,7 @@ return { -- LSP Configuration & Plugins
     local servers = {
       gopls = {},
       yq = {},
+      eslint = {},
       -- pyright = {},
       -- rust_analyzer = {},
       -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -113,8 +114,14 @@ return { -- LSP Configuration & Plugins
       --    https://github.com/pmizio/typescript-tools.nvim
       --
       -- But for many setups, the LSP (`tsserver`) will work just fine
-      -- tsserver = {},
-      --
+      ts_ls = {
+        capabilities = require('cmp_nvim_lsp').default_capabilities(),
+        on_attach = function(client, bufnr)
+          vim.bo[bufnr].tabstop = 2
+          vim.bo[bufnr].shiftwidth = 2
+          vim.bo[bufnr].expandtab = true
+        end,
+      },
 
       lua_ls = {
         -- cmd = {...},
@@ -164,7 +171,17 @@ return { -- LSP Configuration & Plugins
     }
     local lspconfig = require 'lspconfig'
 
-    lspconfig.eslint.setup {}
+    lspconfig.eslint.setup {
+      eslint = function()
+        require('lazyvim.util').lsp.on_attach(function(client)
+          if client.name == 'eslint' then
+            client.server_capabilities.documentFormattingProvider = true
+          elseif client.name == 'tsserver' then
+            client.server_capabilities.documentFormattingProvider = false
+          end
+        end)
+      end,
+    }
 
     lspconfig.gopls.setup {
       settings = {

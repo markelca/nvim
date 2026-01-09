@@ -31,6 +31,8 @@ require('lazy').setup({
   require 'plugins.context',
   require 'plugins.clapi',
   require 'plugins.avante',
+  require 'plugins.nvim-lint',
+  require 'plugins.streamer-mode',
   -- require 'plugins.image',
   -- require 'plugins.lint',
   { 'tpope/vim-sleuth' }, -- Detect tabstop and shiftwidth automatically
