@@ -106,7 +106,19 @@ return { -- LSP Configuration & Plugins
       gopls = {},
       yq = {},
       eslint = {},
-      -- pyright = {},
+      pyright = {
+        before_init = function(_, config)
+          local venv_path = vim.fn.getcwd() .. '/.venv'
+          if vim.fn.isdirectory(venv_path) == 1 then
+            config.settings.python.pythonPath = venv_path .. '/bin/python'
+          end
+        end,
+        settings = {
+          python = {
+            pythonPath = '.venv/bin/python',
+          },
+        },
+      },
       -- rust_analyzer = {},
       -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
       --
